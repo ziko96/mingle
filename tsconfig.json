@@ -1,0 +1,54 @@
+random-chat-service
+├── src
+│   ├── client
+│   │   ├── components
+│   │   │   ├── Chat.tsx
+│   │   │   ├── VideoStream.tsx
+│   │   │   └── UserControls.tsx
+│   │   ├── styles
+│   │   │   └── main.css
+│   │   └── index.tsx
+│   ├── server
+│   │   ├── controllers
+│   │   │   └── chatController.ts
+│   │   ├── models
+│   │   │   └── User.ts
+│   │   ├── services
+│   │   │   └── matchmaking.ts
+│   │   ├── websocket
+│   │   │   └── handler.ts
+│   │   └── server.ts
+│   └── shared
+│       └── types.ts
+├── public
+│   └── index.html
+├── tests
+│   ├── client
+│   │   └── components.test.ts
+│   └── server
+│       └── matchmaking.test.ts
+├── package.json
+├── tsconfig.json
+│   {
+│     "compilerOptions": {
+│       "target": "ES2020",
+│       "module": "commonjs",
+│       "lib": ["es2020", "dom"],
+│       "outDir": "./dist",
+│       "rootDir": "./src",
+│       "strict": true,
+│       "esModuleInterop": true,
+│       "skipLibCheck": true,
+│       "forceConsistentCasingInFileNames": true,
+│       "moduleResolution": "node"
+│     },
+│     "include": [
+│       "src/**/*"
+│     ],
+│     "exclude": [
+│       "node_modules",
+│       "dist"
+│     ]
+│   }
+├── .env
+└── README.md

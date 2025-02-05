@@ -1,0 +1,20 @@
+"use strict";
+exports.__esModule = true;
+Sure, here;
+'s the content for the file `/random-chat-service/random-chat-service/src/server/server.ts`:;
+var express_1 = require("express");
+var http_1 = require("http");
+var socket_io_1 = require("socket.io");
+var chatController_1 = require("./controllers/chatController");
+var handler_1 = require("./websocket/handler");
+var app = (0, express_1["default"])();
+var server = http_1["default"].createServer(app);
+var io = new socket_io_1.Server(server);
+var chatController = new chatController_1.ChatController();
+app.use(express_1["default"].json());
+app.use(express_1["default"].static('public'));
+(0, handler_1.setupWebSocket)(io, chatController);
+var PORT = process.env.PORT || 3000;
+server.listen(PORT, function () {
+    console.log("Server is running on http://localhost:".concat(PORT));
+});
